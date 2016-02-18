@@ -39,9 +39,10 @@ class Solution(object):
             longList = headB
             shortList = headA
         
+        // 得到距离        
         dist = abs(lenA-lenB)
-        print dist
-        
+
+        // 找到从tail算起的共同的一个起点
         while dist > 0:
             longList = longList.next
             print "b"
