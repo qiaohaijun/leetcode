@@ -3,7 +3,7 @@
 #     def __init__(self, x):
 #         self.val = x
 #         self.next = None
-
+// 如果不使用dummy node，很难删除自己
 class Solution(object):
     def removeElements(self, head, val):
         """
