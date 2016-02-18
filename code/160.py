@@ -4,6 +4,11 @@
 #         self.val = x
 #         self.next = None
 
+// 这个题目需要注意的是，是否有环
+// 我这个题目用的方法是对链表做了两次遍历，然后大家从同一个起点开始
+// 空间复杂的是O(1)
+// 如果可以使用dict的话，那个这个问题就好办了，但是空间复杂度是O(n)
+// 但是代码会简单很多
 class Solution(object):
     def getIntersectionNode(self, headA, headB):
         """
