@@ -13,12 +13,16 @@ class Solution(object):
         :type l2: ListNode
         :rtype: ListNode
         """
+        # [None]
+        # [None]
         if l1 is None and l2 is None:
             return None
         
         dummy = ListNode(0)
         retList = dummy
         up = 0
+        
+        # 处理正常的情况
         while l1 is not None and l2 is not None:
             # print (l1.val+l2.val+up)%10
             dummy.next = ListNode((l1.val+l2.val+up)%10)
@@ -31,18 +35,25 @@ class Solution(object):
             l1 = l1.next
             l2 = l2.next
             
-            
+        # [1,2]
+        # [1]
         while l1 is not None:
             dummy.next = ListNode((l1.val+up)%10)
             up=(l1.val+up)/10
             dummy = dummy.next
             l1 = l1.next
+            
+        # [1]
+        # [1,2]
         while l2 is not None:
             dummy.next = ListNode((l2.val+up)%10)
             up=(l2.val+up)/10
             dummy = dummy.next
             l2 = l2.next
-            
+        
+        #处理最后的还有一个进位的情况
+        # [5]
+        # [5]
         if up>0:
             dummy.next = ListNode(up)
         return retList.next
